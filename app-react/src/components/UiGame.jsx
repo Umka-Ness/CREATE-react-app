@@ -4,6 +4,14 @@ export const UiGame = () => {
   const [value, setValue] = useState("");
   const [value1, setValue1] = useState("");
 
+  function check() {
+    if (value1 !== "") {
+      reset();
+    } else {
+      setValue("text");
+      setValue1("");
+    }
+  }
   function reset() {
     setValue(value1);
     setValue1("");
@@ -16,7 +24,7 @@ export const UiGame = () => {
         value={value1}
         onChange={(e) => setValue1(e.target.value)}
       />
-      <button onClick={reset}>Goo</button>
+      <button onClick={check}>Goo</button>
     </div>
   );
 };
